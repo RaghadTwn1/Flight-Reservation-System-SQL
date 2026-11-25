@@ -1,10 +1,16 @@
-✈️ Airlines Database Management System
-IT Project | Relational Database Design & SQL Server Implementation
-A relational database project that demonstrates how airline operations can be organized and managed using Microsoft SQL Server.
-📌 Table of Contents
+# ✈️ Airlines Database Management System
+
+**IT Project | Relational Database Design & SQL Server Implementation**
+
+A relational database project designed to organize and manage airline operations using Microsoft SQL Server.
+
+---
+
+## 📌 Table of Contents
+
 1. Project Overview
 2. Objectives
-3. Technologies
+3. Technologies Used
 4. Database Structure
 5. Relationships and Constraints
 6. SQL Views
@@ -12,96 +18,185 @@ A relational database project that demonstrates how airline operations can be or
 8. Normalization
 9. Project Files
 10. Conclusion
-📖 Project Overview
-The Airlines Database Management System is an academic database project implemented using Microsoft SQL Server.
-The system organizes information about users, travelers, airlines, airports, trips, seats, tickets, payments, luggage, and reviews. It uses relational tables, keys, constraints, SQL views, and queries to store and retrieve information.
-🎯 Objectives
-● Design a relational database for an airline reservation system.
-● Organize information into related tables.
-● Define primary keys and foreign keys.
-● Apply constraints to support data integrity.
-● Insert sample records into the database.
-● Retrieve and analyze information using SQL queries.
-● Create views for commonly accessed information.
-● Demonstrate database normalization concepts.
-🧰 Technologies
-● Microsoft SQL Server — relational database management.
-● SQL — database definition, data insertion, and querying.
-● SQL Server Management Studio (SSMS) — writing and executing SQL scripts.
-● GitHub — project hosting and documentation.
-🗄️ Database Structure
-The database contains 11 tables:
-1. Users — user account and contact information.
-2. Travelers — traveler details linked to users.
-3. Airlines — airline company information.
-4. Airports — airport names, cities, and countries.
-5. Trips — trip dates, times, prices, airlines, and airport references.
-6. Seats — seat numbers, classes, and positions.
-7. Tickets — ticket bookings and booking statuses.
-8. Payments — payment amounts, dates, and methods.
-9. SeatReservations — associations between trips and reserved seats.
-10. Luggage — luggage weight, type, quantity, fees, and status.
-11. Reviews — user ratings and comments about trips.
-🔗 Relationships and Constraints
-The database uses primary keys and foreign keys to connect related records:
-● Travelers references Users.
-● Trips references Airlines and Airports for departure and arrival.
-● Tickets references Users, Travelers, Trips, and Seats.
-● Payments and Luggage reference Tickets.
-● SeatReservations references Trips and Seats.
-● Reviews references Users and Trips.
-Data Integrity
-The project uses these SQL constraints:
-● PRIMARY KEY — uniquely identifies each record.
-● FOREIGN KEY — defines relationships between tables.
-● NOT NULL — requires a value in selected columns.
-● UNIQUE — prevents duplicate values in selected columns.
-● CHECK — restricts values such as gender, seat class, ticket status, payment method, luggage status, and review rating.
-● DEFAULT — supplies default values for selected luggage fields.
-👁️ SQL Views
-The project includes the following views:
-● View_User_Bookings — displays users, ticket IDs, trip routes, and booking statuses.
-● View_Upcoming_Trips — displays trips from the configured date onward.
-● View_Confirmed_Tickets — displays tickets with a Confirmed status.
-● View_Luggage_Heavy — displays luggage items weighing more than 20.
-● View_Reviews_High — displays reviews with ratings of 4 or higher.
-● View_Airline_Trips — displays airline names with trip routes and prices.
-● View_Trip_Prices — displays trips priced below 400.
-🔎 SQL Queries
-The project demonstrates the use of:
-● JOIN to combine related tables.
-● COUNT() to count records.
-● SUM() to calculate totals.
-● GROUP BY to group records.
-● HAVING to filter grouped results.
-● ORDER BY to sort results.
-● WHERE to filter records.
-Example query tasks:
-1. Count bookings for each user.
-2. List airline trips in ascending order of price.
-3. Display confirmed tickets and their prices.
-4. Calculate the total amount paid by customers with confirmed tickets.
-📊 Normalization
-The project report discusses three common normalization stages:
-● First Normal Form (1NF): organizes data into atomic values and removes repeating groups.
-● Second Normal Form (2NF): removes partial dependencies on composite keys.
-● Third Normal Form (3NF): removes transitive dependencies so non-key attributes depend on the key.
-Refer to the project report for the examples and explanations included in the submitted work.
-📁 Project Files
-The repository is intended to contain the following files:
+
+---
+
+## 📖 1. Project Overview
+
+The Airlines Database Management System is an academic project implemented using Microsoft SQL Server.
+
+The system manages information about users, travelers, airlines, airports, trips, seats, tickets, payments, luggage, and reviews.
+
+It demonstrates relational database design, SQL implementation, data management, and information retrieval.
+
+---
+
+## 🎯 2. Objectives
+
+- Design a relational database for an airline reservation system.
+- Organize information into related tables.
+- Define primary keys and foreign keys.
+- Apply database constraints.
+- Insert sample records.
+- Retrieve information using SQL queries.
+- Create views for easier data access.
+- Apply database normalization concepts.
+
+---
+
+## 🧰 3. Technologies Used
+
+| Technology | Purpose |
+|---|---|
+| Microsoft SQL Server | Database management |
+| SQL | Database creation and querying |
+| SSMS | Writing and executing SQL |
+| GitHub | Project hosting and documentation |
+
+---
+
+## 🗄️ 4. Database Structure
+
+The database consists of **11 tables**:
+
+| Table | Description |
+|---|---|
+| Users | User account information |
+| Travelers | Traveler personal details |
+| Airlines | Airline company information |
+| Airports | Airport information |
+| Trips | Flight schedules and prices |
+| Seats | Seat numbers and classes |
+| Tickets | Ticket booking information |
+| Payments | Payment information |
+| SeatReservations | Reserved seats for trips |
+| Luggage | Baggage information |
+| Reviews | Ratings and comments |
+
+---
+
+## 🔗 5. Relationships and Constraints
+
+The database uses Primary Keys and Foreign Keys to establish relationships between tables.
+
+**Main Relationships:**
+
+- Travelers → Users
+- Trips → Airlines
+- Trips → Airports
+- Tickets → Users
+- Tickets → Travelers
+- Tickets → Trips
+- Tickets → Seats
+- Payments → Tickets
+- Luggage → Tickets
+- SeatReservations → Trips and Seats
+- Reviews → Users and Trips
+
+**Database Constraints:**
+
+- PRIMARY KEY
+- FOREIGN KEY
+- NOT NULL
+- UNIQUE
+- CHECK
+- DEFAULT
+
+These constraints help maintain data integrity and consistency.
+
+---
+
+## 👁️ 6. SQL Views
+
+The project includes seven SQL Views:
+
+| View Name | Description |
+|---|---|
+| View_User_Bookings | Displays user bookings and trip details |
+| View_Upcoming_Trips | Displays trips from the configured date |
+| View_Confirmed_Tickets | Displays confirmed tickets |
+| View_Luggage_Heavy | Displays luggage weighing more than 20 |
+| View_Reviews_High | Displays reviews rated 4 or higher |
+| View_Airline_Trips | Displays airline and trip information |
+| View_Trip_Prices | Displays trips priced below 400 |
+
+---
+
+## 🔍 7. SQL Queries
+
+The project demonstrates several SQL operations:
+
+- JOIN
+- COUNT()
+- SUM()
+- GROUP BY
+- HAVING
+- ORDER BY
+- WHERE
+
+**Examples of Query Applications:**
+
+1. Counting total bookings for each user.
+2. Listing airline trips by ascending price.
+3. Displaying confirmed tickets.
+4. Calculating total payments for customers.
+
+---
+
+## 📊 8. Database Normalization
+
+The project discusses three normalization stages:
+
+**First Normal Form (1NF)**
+
+- Ensures atomic values.
+- Removes repeating groups.
+
+**Second Normal Form (2NF)**
+
+- Removes partial dependencies.
+- Ensures full dependency on the primary key.
+
+**Third Normal Form (3NF)**
+
+- Removes transitive dependencies.
+- Improves data organization.
+
+---
+
+## 📁 9. Project Files
+
+```text
 Flight-Reservation-System-SQL/
+│
 ├── README.md
 ├── FlightBookingDatabase.sql
+│
 ├── presentation/
 │   └── IT-Project-Presentation.pdf
+│
 ├── report/
 │   └── IT-Project-Report.pdf
+│
 └── docs/
     ├── database-schema.png
     └── erd.png
-The folder and file names above are suggested. Use the actual names of the files uploaded to the repository.
-🎓 Conclusion
-This project provided practical experience in relational database design and SQL Server implementation. It brought together table creation, relationships, constraints, sample data, views, queries, and normalization concepts in an airline database scenario.
-Airlines Database Management System
- IT Project | Database Design and SQL Server
+```
 
+*Note: The folder structure above is suggested. Actual file names may differ.*
+
+---
+
+## 🎓 10. Conclusion
+
+This project provided practical experience in relational database design and SQL Server implementation.
+
+It demonstrates how SQL can be used to create tables, establish relationships, insert data, create views, and retrieve useful information.
+
+The project also highlights the importance of database normalization, data integrity, and structured information management.
+
+---
+
+**Airlines Database Management System**
+
+*IT Project | Database Design & SQL Server*
