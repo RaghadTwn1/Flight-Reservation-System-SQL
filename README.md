@@ -164,26 +164,6 @@ The project discusses three normalization stages:
 
 ---
 
-## 📁 9. Project Files
-
-```text
-Flight-Reservation-System-SQL/
-│
-├── README.md
-├── FlightBookingDatabase.sql
-│
-├── presentation/
-│   └── IT-Project-Presentation.pdf
-│
-├── report/
-│   └── IT-Project-Report.pdf
-│
-└── docs/
-    ├── database-schema.png
-    └── erd.png
-```
-
-*Note: The folder structure above is suggested. Actual file names may differ.*
 
 ---
 
